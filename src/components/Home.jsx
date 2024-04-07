@@ -37,7 +37,7 @@ const Home = () => {
               alt=""
             />
 
-            <div className="content absolute inset-0 bg-">
+            <div className="content absolute inset-0 overflow-hidden">
               <div
                 className={`upper mt-28 text-center ${
                   index === arr.length - 4 ? "text-white" : ""
