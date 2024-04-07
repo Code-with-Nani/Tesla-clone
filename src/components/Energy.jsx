@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const Energy = () => {
   return (
-    <div>
+    <div className="h-screen w-screen bg-red-950 flex justify-center items-center medium text-white">
       This is energy page
     </div>
-  )
-}
+  );
+};
 
-export default Energy
+export default Energy;
