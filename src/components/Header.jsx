@@ -83,7 +83,7 @@ const Header = () => {
       </div>
 
       {isOpen && (
-        <div className="menu h-[100vh] w-[100vw] bg-[#FFFFFF] absolute inset-0 px-5 py-5 z-50 lg:hidden">
+        <div className="menu h-[100vh] w-[100vw] bg-[#FFFFFF] fixed inset-0 px-5 py-5 z-50 lg:hidden">
           <div className="close flex justify-end items-center">
             <img
               onClick={handleMenu}
