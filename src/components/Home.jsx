@@ -54,7 +54,7 @@ const Home = () => {
                 </h2>
               </div>
 
-              <div className="lower flex flex-col lg:flex-row justify-center items-center gap-6 mt-[25rem]">
+              <div className="lower flex flex-col lg:flex-row justify-center items-center gap-6 mt-[20rem]">
                 <button className="bg-[#F7F7F6] lg:w-[15%] w-[350px] py-[10px] text-black  text-[14px] leading-[17px] medium rounded-[5px]">
                   {val.btn1}
                 </button>
