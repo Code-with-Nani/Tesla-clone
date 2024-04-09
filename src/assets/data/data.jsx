@@ -7,9 +7,26 @@ import img6 from "../images2/image6.avif";
 import img7 from "../images2/image7.avif";
 import img8 from "../images2/image8.avif";
 import img9 from "../images2/image9.avif";
+
+import charger1 from "../images2/charger1.jpg";
+import charger2 from "../images2/charger2.jpg";
+import charger3 from "../images2/charger3.jpg";
+
 import icon1 from "../images/icon1.svg";
+import icon1c from "../images/icon1 copy.svg";
 import icon2 from "../images/icon2.svg";
+import icon2c from "../images/icon2 copy.svg";
 import icon3 from "../images/icon3.svg";
+import icon3c from "../images/icon3 copy.svg";
+
+export const photo = [
+  {src:charger1 , head:"Charging" , sub:"Learn"},
+  {src:charger2 , head:"Home Charging" , sub:"Learn"},
+  {src:charger3 , head:"Supercharging" , sub:"Learn"}
+];
+
+
+
 
 export const arr = [
   {
@@ -112,6 +129,7 @@ export const list = [
 ];
 
 export const icons = [{ i: icon1 }, { i: icon2 }, { i: icon3 }];
+export const copy = [{ i: icon1c }, { i: icon2c }, { i: icon3c }];
 
 export const upper = [
   { up: "Vehicles", to: "/vehicles" },
@@ -121,3 +139,14 @@ export const upper = [
 ];
 
 export const center = [{ ce: "Shop" }, { ce: "Support" }];
+
+export const charge = [
+  "Help Me Charge",
+  "Charging Calculator",
+  "Trip Planner",
+  "Charging With NACS",
+  "Supercharger Voting",
+  "Host a Supercharger",
+  "Commercial Charging",
+  "Host Wall Connectors",
+];

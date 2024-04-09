@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import logo from "../assets/images/logo.svg";
-import icon1 from "../assets/images/icon1.svg";
+import logo2 from "../assets/images/logo copy.svg";
 import icon2 from "../assets/images/icon2.svg";
 import icon3 from "../assets/images/icon3.svg";
 import close from "../assets/images/close.svg";
@@ -8,8 +8,14 @@ import arrow from "../assets/images/arrow.svg";
 import { Link } from "react-router-dom";
 import { list } from "../assets/data/data";
 import { icons } from "../assets/data/data";
+import { copy } from "../assets/data/data";
 import { upper } from "../assets/data/data";
 import { center } from "../assets/data/data";
+import { charge } from "../assets/data/data";
+import { photo } from "../assets/data/data";
+
+
+
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,9 +28,19 @@ const Header = () => {
     setIsOpen(false);
   };
 
+  const [hover , setHover] = useState(null)
+
+  const handleHover = (index) => {
+    setHover(index)
+  }
+
+  const closeHover = ()=>{
+    setHover(null)
+  }
+
   return (
     <div className="main overflow-hidden select-none">
-      <div className="nav-lg h-[60px] w-[100vw] medium hidden lg:flex justify-between items-center px-12 bg-transparent absolute inset-0 z-50 text-white overflow-hidden">
+      <div className={`nav-lg h-[60px] w-[100vw] medium hidden lg:flex justify-between items-center px-12 bg-transparent absolute inset-0 z-50 text-white overflow-hidden ${hover ? "hidden" : ""}`}>
         <div className="left ">
           <div className="logo ">
             <a href="/">
@@ -37,20 +53,22 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="center list-none flex justify-center items-center gap-6">
+        <div className="center list-none flex justify-center items-center gap-4">
           {list.map((e, index) => (
             <Link to={e.path}>
-              <li key={index} className="cursor-pointer">
+              <li onMouseEnter={handleHover} key={index} className={`cursor-pointer py-3 px-2 ${hover ? "text-black" : ""}`}>
                 {e.li}
               </li>
             </Link>
           ))}
         </div>
 
+       
+
         <div className="right flex justify-center items-center gap-2">
-          {icons.map((val, index) => (
+          {icons.map((val, i) => (
             <img
-              key={index}
+              key={i}
               src={val.i}
               alt=""
               className="h-[23px] cursor-pointer"
@@ -161,6 +179,89 @@ const Header = () => {
           </div>
         </div>
       )}
+
+
+
+
+{
+          hover   && (
+            <div onMouseLeave={closeHover}  className="bg-white min-h-[50vh] text-black overflow-hidden hidden transition-all duration-150  lg:block">
+             
+             <div className="nav-lg h-[60px] w-[100vw] medium hidden lg:flex justify-between items-center px-12 bg-transparent absolute inset-0 z-50 text-white overflow-hidden">
+        <div className="left ">
+          <div className="logo ">
+            <a href="/">
+              <img
+                className="w-[120px] h-[20px] cursor-pointer"
+                src={logo2}
+                alt=""
+              />
+            </a>
+          </div>
+        </div>
+
+        <div className="center list-none flex justify-center items-center gap-4">
+          {list.map((e, index) => (
+            <Link to={e.path}>
+              <li onMouseEnter={handleHover} key={index} className={`cursor-pointer py-3 px-2 ${hover ? "text-black" : ""}`}>
+                {e.li}
+              </li>
+            </Link>
+          ))}
+        </div>
+
+       
+
+        <div className="right flex justify-center items-center gap-2">
+          {copy.map((val, i) => (
+            <img
+              key={i}
+              src={val.i}
+              alt=""
+              className="h-[23px] cursor-pointer"
+            />
+          ))}
+        </div>
+      </div>
+            
+
+
+           <div className="lower  pt-32 xl:px-64 lg:px-10    flex justify-center items-center xl:gap-36 gap-5">
+ 
+           <div className="left flex xl:gap-16 lg:gap-6">
+            {
+              photo.map((per,index) => (
+                <div className="main flex flex-col justify-center items-center">
+                  <img className={`h-[80px]  ${index === photo.length - 1 ? "mix-blend-difference" : "" }`} src={per.src} alt="" />
+                  <h1 className="border-l-black pl-16 medium text-[17px] -translate-x-7 pt-3">{per.head}</h1>
+                  <h1 className="border-l-black pl-16 medium text-[13px] -translate-x-7 cursor-pointer">{per.sub}</h1>
+                </div>
+              ))
+            }
+            </div>
+
+            <div className="right list-none border-l-[1px] border-l-black pl-16 medium text-[15px] flex flex-col gap-2">
+             {
+              charge.map((val) => (
+                <li className="border-b-2 border-b-transparent hover:border-b-black w-fit transition-all duration-[0.3s] delay-[0.1s] ease cursor-pointer">{val}</li>
+              ))
+             }
+            </div>
+
+
+           </div>
+
+
+            </div>
+          )
+        }
+
+
+
+
+
+
+
     </div>
   );
 };
